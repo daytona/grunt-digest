@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 
       //Add file to map
       if(options.basePath) {
-        filemap[path.relative(options.basePath, filepath)] = fileDigest;
+        filemap[path.relative(options.basePath, filepath)] = path.join(path.dirname(path.relative(options.basePath, filepath)), fileDigest);
       } else {
         filemap[file] = fileDigest;
       }
